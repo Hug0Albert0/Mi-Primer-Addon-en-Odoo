@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="modify_report_template" inherit_id="sale.report_saleorder_document">
+
+        <xpath expr="//h2"  position="after">
+            <div class="row">
+                <h3> Cambio de reporte </h3>
+            </div>
+        </xpath>
+    </template>
+</odoo>

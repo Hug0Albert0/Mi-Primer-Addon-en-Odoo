@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="modify_report"
+        model="test.odoo"
+        string="Modify report"
+        report_type="qweb-html"
+        name="test_odoo_hugo.modify_report_template"
+        file="test_odoo_hugo.modify_report_template"
+    />
+</odoo>

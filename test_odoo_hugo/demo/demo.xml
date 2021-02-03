@@ -1,0 +1,11 @@
+<odoo>
+    <record model="test_odoo_hugo.technologies" id="1">
+        <field name="name">ReactJS</field>
+        <field name="description">
+            Facebook library for front-end development
+        </field>
+        <field name="is_active"></field>
+        <field name="users_number">5000000</field>
+        <field name="version">1.16</field>
+    </record>
+</odoo>

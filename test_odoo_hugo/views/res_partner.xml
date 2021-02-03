@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_partner_info_form" model="ir.ui.view">
+        <field name="name">res_partner_info_form</field>
+        <field name="model">res.partner</field>
+        <!-- <field name="inherit_id" ref="base.view_partner_form"/> -->
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <!-- <xpath expr="//field[@name='lang']" position="after">
+                <field name="descripcion"/>
+            </xpath> -->
+            <xpath expr="//page[@name='accounting']" position="after">
+                <page string="Descripcion">
+                    <group>
+                        <field name="descripcion"/>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='trust']" position="after">
+                <field name="verificado"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_partner_replace_notify_form" model="ir.ui.view">
+        <field name="name">res_partner_replace_notify_form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="mail.view_emails_partner_info_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='notify_email']" position="replace">
+                <field name="notify_email"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

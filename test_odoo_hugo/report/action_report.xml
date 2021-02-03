@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="test_odoo_hugo.technologies"
+        model="test_odoo_hugo.technologies"
+        string="Tecnologias"
+        report_type="qweb-pdf"
+        name="test_odoo_hugo.test_odoo_hugo_technologies_template"
+        file="test_odoo_hugo.test_odoo_hugo_technologies_template"
+    />
+</odoo>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="test_odoo_hugo_technologies_template">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <h2>Reporte de Tecnologia</h2>
+                        <p><strong>Nombre de la tecnologia: </strong><span t-field="o.name"/></p>
+                        <p><strong>Folio: </strong><span t-field="o.folio"/></p>
+                        <p><strong>Descripcion: </strong><span t-field="o.description"/></p>
+                        <p><strong>Num. Usuarios: </strong><span t-field="o.users_number"/></p>
+                        <p><strong>Version: </strong><span t-field="o.version"/></p>
+                        <p>
+                            <strong>Activo? : </strong>
+                            <t t-if="o.is_active">
+                                <i class="fa fa-check"></i>
+                            </t>
+                            <t t-if="o.is_active == False">
+                                <i class="fa fa-close"></i>
+                            </t>
+                        </p>
+                        <table class="table table-striped">
+                            <thead>
+                                <th>Nombre</th>
+                                <th>Descripcion</th>
+                                <th>Numero</th>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.detail_id" t-as="detail_id">
+                                    <tr>
+                                        <td><span t-field="detail_id.name"/></td>
+                                        <td><span t-field="detail_id.description"/></td>
+                                        <td><span t-field="detail_id.number"/></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        <div>
+                            <img style="height:200px; width:200px;" t-att-src="'/report/barcode/QR/%s'%'text'"/>
+                            <div
+                                class="card-img-top"
+                                t-field="o.foto"
+                                t-options='{"widget": "image"}'
+                                style="height:200px; width:400px;"
+                            />
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
